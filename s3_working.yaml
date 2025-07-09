@@ -1,7 +1,10 @@
-AWSTemplateFormatVersion: 2019-09-09
-Resorces:
+#Description of what this change includes - Changes were made to Line 4 (2019 change to 2010), Line 19 (BucketPolicy spaced to column 2), and Line 20 ('#" removed to uncomment line and eliminate 'null' error).  
+#Revision number - 2
+#Date - 2025-07-09
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
   S3Bucket:
-    Type: 'AWS:S3:Bucket'
+    Type: 'AWS::S3::Bucket'
     Properties:
       PublicAccessBlockConfiguration:
         BlockPublicAcls: false
@@ -13,8 +16,8 @@ Resorces:
         ErrorDocument: error.html
     DeletionPolicy: Retain
     UpdateReplacePolicy: Retain
-BucketPolicy:
-    #Type: 'AWS::S3::BucketPolicy'
+  BucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
     Properties:
       PolicyDocument:
         Id: MyPolicy
